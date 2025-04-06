@@ -6,7 +6,6 @@ export const AuthActions = createActionGroup({
       login: props<{ email: string; password: string }>(), // Action without payload
       loginSuccess: props<{ user: any }>(), // Action with payload (success)
       loginFailure: props<{ error: any }>(), // Action with payload (failure)
-      loginFailureMessage: props<{ message: string }>(), // Action with payload (failure)
     },
   });
   

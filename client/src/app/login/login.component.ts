@@ -1,14 +1,17 @@
 
-import { Component, computed, inject, Signal } from '@angular/core';
+import { Component, computed, inject, signal, Signal, WritableSignal } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
-import { Store } from '@ngrx/store';
+import { select, Store } from '@ngrx/store';
+import { Observable } from 'rxjs';
+import { getErrorMessage } from 'store/ui/ui.selector';
 import { AuthActions } from 'store/user/user.action';
+import { CommonModule } from '@angular/common';
 
 
 @Component({
   selector: 'app-login',
-  imports: [FormsModule],
+  imports: [FormsModule, CommonModule],
   templateUrl: './login.component.html',
   styleUrl: './login.component.scss',
 })
@@ -18,19 +21,22 @@ export class LoginComponent {
     password: '',
   };
 
-  //loggedInUser: Signal<UserModel> = computed(() => this.store.select(selectUser));
+  errorMessage$: Observable<string | null>;
 
-  constructor(private store: Store) {}
-
- // loginService = inject(LoginService);
+  constructor(private store: Store) {
+    this.errorMessage$ = this.store.select(getErrorMessage);
+  }
 
   router: Router = inject(Router);
 
   onLogin() {
     //debugger;
     console.log('Form submitted');
-    console.log(this.loginObject);
     this.store.dispatch(AuthActions.login(this.loginObject));
+    // this.store.select(getErrorMessage).subscribe((errorMessage) => {
+    //   this.errorMessage$.set(errorMessage);
+    // });
+    
     
     
     

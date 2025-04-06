@@ -11,8 +11,11 @@ const initialState: UiState = {
 
 export const uiReducer = createReducer(
   initialState,
-  on(showErrorMessage, (state, { message }) => ({
-    ...state,
-    errorMessage: message
-  }))
+  on(showErrorMessage, (state, { message }) => {
+    console.log('showErrorMessage action dispatched', message);
+    return {
+      ...state,
+      errorMessage: message
+    };
+  })
 );

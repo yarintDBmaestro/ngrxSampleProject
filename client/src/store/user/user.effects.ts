@@ -6,6 +6,7 @@ import { of } from 'rxjs';
 import { AuthActions } from './user.action';  // Actions
 import { Router } from '@angular/router';
 import { Store } from '@ngrx/store';
+import { showErrorMessage } from 'store/ui/ui.actions';
 
 
 @Injectable()
@@ -36,5 +37,14 @@ export class AuthEffects {
       ofType(AuthActions.loginSuccess),
       tap(() => this.router.navigate(['/home']))
     ), { dispatch: false }
+  )
+  
+  loginFailure$ = createEffect(() =>
+    this.actions$.pipe(
+      ofType(AuthActions.loginFailure),
+      map((action: { error: any }) => 
+         showErrorMessage({ message: action.error.error.message || 'Login failed. Please try again.' })
+      )
+    ), { dispatch: true }
   )
 }

@@ -1,8 +1,13 @@
 <div class="container">
     <section class="account">
+      
       <div class="account-inner">
         <div class="account-inner__side content">
           <div class="account-card">
+            
+            <div *ngIf="errorMessage$ | async as errorMessage" class="error-message">
+              {{ errorMessage }}
+            </div>
             <div class="account-card__header">
               <h4 class="title">Sign In</h4>
             </div>
