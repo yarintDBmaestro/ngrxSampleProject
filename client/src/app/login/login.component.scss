@@ -1,0 +1,170 @@
+/* Global Styles */
+body,
+html {
+  margin: 0;
+  padding: 0;
+  font-family: "Arial", sans-serif;
+  background-color: #f4f6f9;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+/* Account Section */
+.account {
+  width: 100%;
+  max-width: 400px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.account-inner {
+  display: flex;
+  width: 100%;
+  height: auto;
+  flex-direction: column;
+}
+
+/* Account Card */
+.account-card {
+  width: 100%;
+  margin: auto;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.account-card__header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.account-card__header .title {
+  font-size: 32px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.account-card__header .subtitle {
+  font-size: 14px;
+  color: #777;
+}
+
+.social-auth-btns a {
+  display: block;
+  background-color: #3b5998;
+  color: white;
+  padding: 12px;
+  margin: 10px 0;
+  text-align: center;
+  border-radius: 8px;
+  font-size: 14px;
+  transition: background-color 0.3s ease;
+  text-decoration: none;
+}
+
+.social-auth-btns a:hover {
+  background-color: #2d4373;
+}
+
+.social-auth-btns a img {
+  width: 20px;
+  margin-right: 8px;
+}
+
+/* Divider */
+.account-card__divider {
+  text-align: center;
+  font-size: 14px;
+  color: #ccc;
+  margin: 20px 0;
+}
+
+/* Form Elements */
+.account-card__body .form-group {
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  font-size: 14px;
+  font-weight: 600;
+  color: #555;
+}
+
+.form-control {
+  width: 100%;
+  padding: 12px;
+  border-radius: 8px;
+  font-size: 16px;
+  color: #333;
+  border: 1px solid #ddd;
+  background-color: #f9f9f9;
+  box-sizing: border-box;
+}
+
+.input-group {
+  display: flex;
+  align-items: center;
+}
+
+.input-group-text {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 18px;
+}
+
+.toggle-password i {
+  font-size: 18px;
+}
+
+/* Button */
+.btn-submit {
+  background-color: #2ab4fe;
+  color: white;
+  font-weight: 600;
+  padding: 12px;
+  width: 100%;
+  border-radius: 8px;
+  font-size: 16px;
+  transition: all 0.3s ease;
+  border: none;
+  box-sizing: border-box;
+}
+
+.btn-submit:hover {
+  background-color: #1dc8cc;
+}
+
+/* Text */
+.text-center {
+  font-size: 14px;
+  color: #555;
+}
+
+.text-center a {
+  color: #2ab4fe;
+}
+
+.text-center a:hover {
+  text-decoration: underline;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .account-inner {
+    flex-direction: column;
+  }
+}

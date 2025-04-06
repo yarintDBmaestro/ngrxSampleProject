@@ -1,0 +1,9 @@
+<div class="container">
+  <h1>Welcome to the Home Page</h1>
+  <div *ngIf="userEmail">
+    <p>You are logged in as: <strong>{{ userEmail() }}</strong></p>
+  </div>
+  <div *ngIf="!userEmail">
+    <p>No user information available.</p>
+  </div>
+</div>

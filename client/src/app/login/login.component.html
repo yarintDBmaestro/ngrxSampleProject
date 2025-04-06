@@ -1,0 +1,72 @@
+<div class="container">
+    <section class="account">
+      <div class="account-inner">
+        <div class="account-inner__side content">
+          <div class="account-card">
+            <div class="account-card__header">
+              <h4 class="title">Sign In</h4>
+            </div>
+            <div class="account-card__body">
+              <form class="account-form" method="POST" action="#">
+                <div class="form-group">
+                  <label for="username">Email</label>
+                  <input
+                    [(ngModel)]="loginObject.email"
+                    class="form-control"
+                    name="email"
+                    type="text"
+                    placeholder="Email"
+                    required
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="password">Password</label>
+                  <div class="input-group">
+                    <input
+                      [(ngModel)]="loginObject.password"
+                      class="form-control"
+                      name="password"
+                      type="password"
+                      placeholder="Password"
+                      id="password"
+                      required
+                    />
+                    <!-- <button class="input-group-text toggle-password" type="button">
+                    <i class="far fa-eye-slash"></i>
+                  </button> -->
+                  </div>
+                </div>
+                <button class="btn btn-submit" type="submit" (click)="onLogin()">
+                  Sign In
+                </button>
+                <div class="account-card__divider">
+                  <span>OR</span>
+                  <p class="subtitle">Sign in using social media</p>
+                  <div class="social-auth-btns">
+                    <a class="btn btn-facebook" href="#">
+                      <img
+                        src="https://flance4u.com/assets/templates/basic/icons/facebook.png"
+                        alt=""
+                      />
+                      Facebook
+                    </a>
+                    <a class="btn btn-google" href="#">
+                      <img
+                        src="https://flance4u.com/assets/templates/basic/icons/google.png"
+                        alt=""
+                      />
+                      Google
+                    </a>
+                  </div>
+                </div>
+  
+                <p class="text-center mt-4">
+                  Don't have an account? <a href="#">Register </a>
+                </p>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
